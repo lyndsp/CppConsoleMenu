@@ -1,5 +1,5 @@
 #include <iostream>
-#include "TemplateCppLibrary/TemplateCppClass.h"
+#include "Domain/TemplateCppClass.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;

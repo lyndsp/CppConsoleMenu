@@ -9,7 +9,7 @@ set(SOURCE_FILES
         )
 add_executable(Google_Tests_run ${SOURCE_FILES})
 
-# linking Google_Tests_run with TemplateCppLibrary which will be tested
-target_link_libraries(Google_Tests_run TemplateCppLibrary)
+# linking Google_Tests_run with Domain which will be tested
+target_link_libraries(Google_Tests_run Domain)
 
 target_link_libraries(Google_Tests_run gtest gtest_main)

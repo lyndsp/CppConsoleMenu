@@ -1,9 +1,12 @@
 #include <iostream>
-#include "Domain/TemplateCppClass.h"
+#include "Domain/Operation.h"
 
 int main() {
+
+    Operation *operation = new Operation();
+
     std::cout << "Hello, World!" << std::endl;
-    std::cout << TemplateCppClass::GetSomething() << std::endl;
+    std::cout << operation->Menu() << std::endl;
 
     return 0;
 }

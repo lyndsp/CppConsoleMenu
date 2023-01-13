@@ -5,7 +5,7 @@ class OperationTestFixture : public ::testing::Test {
 protected:
     virtual void SetUp()
     {
-        operation = new Operation();
+        operation = new Operation("Menu");
     }
 
     virtual void TearDown() {
@@ -19,5 +19,5 @@ TEST_F(OperationTestFixture, operationsHaveMenuText){
 
     const char *menu = operation->Menu();
 
-    EXPECT_STREQ(menu, "Menu text");
+    EXPECT_STREQ(menu, "Menu");
 }

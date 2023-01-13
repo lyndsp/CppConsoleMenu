@@ -5,13 +5,13 @@ using namespace std;
 
 int main() {
 
-    Operation *operation = new Operation();
-
-    cout << "Hello, World!" << endl;
-    cout << " - " << operation->Menu() << endl;
-    cout << endl;
+    auto *operation = new Operation();
 
     while (true) {
+        cout << "Hello, World!" << endl;
+        cout << " - " << operation->Menu() << endl;
+        cout << endl;
+
         string input;
         getline(cin, input);
 
@@ -20,10 +20,6 @@ int main() {
         }
         else {
             system("clear");
-
-            cout << "Hello, World!" << endl;
-            cout << " - " << operation->Menu() << endl;
-            cout << endl;
         }
     }
 

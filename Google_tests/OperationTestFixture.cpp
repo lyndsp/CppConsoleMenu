@@ -5,7 +5,7 @@ class OperationTestFixture : public ::testing::Test {
 protected:
     virtual void SetUp()
     {
-        operation = new Operation("Menu");
+        operation = new Operation();
     }
 
     virtual void TearDown() {
@@ -15,9 +15,20 @@ protected:
     Operation *operation;
 };
 
-TEST_F(OperationTestFixture, operationsHaveMenuText){
+TEST_F(OperationTestFixture, operationsHaveDefaultMenuText){
 
     const char *menu = operation->Menu();
 
-    EXPECT_STREQ(menu, "Menu");
+    EXPECT_STREQ(menu, "Menu not set");
+}
+
+TEST_F(OperationTestFixture, menuTextCanBeSetAtConstruction){
+
+    const char *expectedText = "Expected menu";
+
+    operation = new Operation(expectedText);
+
+    const char *menu = operation->Menu();
+
+    EXPECT_STREQ(menu, expectedText);
 }

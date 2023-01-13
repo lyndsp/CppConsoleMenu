@@ -9,7 +9,7 @@ public:
 
     virtual const char * Menu();
 private:
-    const char * menuText;
+    const char * menuText = "Menu not set";
 };
 
 

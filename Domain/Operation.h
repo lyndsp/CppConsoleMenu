@@ -4,8 +4,12 @@
 
 class Operation {
 public:
-    virtual const char * Menu();
+    Operation() {}
+    Operation(const char *menuText) : menuText{menuText}{}
 
+    virtual const char * Menu();
+private:
+    const char * menuText;
 };
 
 

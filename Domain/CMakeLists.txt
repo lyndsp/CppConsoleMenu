@@ -1,10 +1,12 @@
 project(Domain)
 
 set(HEADER_FILES
+        MenuController.h
         Operation.h
         )
 
 set(SOURCE_FILES
+        MenuController.cpp
         Operation.cpp
         )
 

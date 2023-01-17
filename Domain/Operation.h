@@ -8,6 +8,7 @@ public:
     Operation(const char *menuText) : menuText{menuText}{}
 
     virtual const char * Menu();
+    virtual void ShowMenu(std::ostream &outputStream);
 private:
     const char * menuText = "Menu not set";
 };

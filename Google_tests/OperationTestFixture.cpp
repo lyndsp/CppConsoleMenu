@@ -19,6 +19,7 @@ TEST_F(OperationTestFixture, operationsHaveDefaultMenuText){
 
     const char *menu = operation->Menu();
 
+
     EXPECT_STREQ(menu, "Menu not set");
 }
 
@@ -31,4 +32,19 @@ TEST_F(OperationTestFixture, menuTextCanBeSetAtConstruction){
     const char *menu = operation->Menu();
 
     EXPECT_STREQ(menu, expectedText);
+}
+
+TEST_F(OperationTestFixture, operationWritesToOutputStream){
+
+    auto expectedText = "Expected menu";
+
+    operation = new Operation(expectedText);
+
+    std::stringstream stream;
+
+    operation->ShowMenu(stream);
+
+    auto output = stream.str();
+
+    EXPECT_STREQ(output.c_str(), expectedText);
 }

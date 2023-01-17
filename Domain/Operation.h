@@ -9,6 +9,7 @@ public:
 
     virtual const char * Menu();
     virtual void ShowMenu(std::ostream &outputStream);
+    virtual void Execute(std::istream &inputStream, std::ostream &outputStream);
 private:
     const char * menuText = "Menu not set";
 };

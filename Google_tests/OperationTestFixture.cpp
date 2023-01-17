@@ -40,11 +40,25 @@ TEST_F(OperationTestFixture, operationWritesToOutputStream){
 
     operation = new Operation(expectedText);
 
-    std::stringstream stream;
+    std::ostringstream stream;
 
     operation->ShowMenu(stream);
 
     auto output = stream.str();
+
+    EXPECT_STREQ(output.c_str(), expectedText);
+}
+
+TEST_F(OperationTestFixture, operationReadsFromInputStream){
+
+    auto expectedText = "expected input";
+
+    std::istringstream inputStream(expectedText);
+    std::ostringstream outputStream;
+
+    operation->Execute(inputStream, outputStream);
+
+    auto output = outputStream.str();
 
     EXPECT_STREQ(output.c_str(), expectedText);
 }
